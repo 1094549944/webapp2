@@ -1,21 +1,20 @@
 <template>
-  <div>
-    <me-navbar class="header">
-      <i class="iconfont icon-scan" slot="left"></i>
-      <me-search-box
-        placeholder="开学季有礼，好货5折起"
-        slot="center"
-        fake
-        @query="getQuery"
-        @click.native="goToSearch"
-      ></me-search-box>
-      <i class="iconfont icon-msg" slot="right"></i>
-    </me-navbar>
-  </div>
+  <me-navbar class="header" v-show="visible">
+    <i class="iconfont icon-scan" slot="left"></i>
+    <!-- <div slot="center">搜索框</div> -->
+    <me-search-box
+      placeholder="开学季有礼，好货5折起"
+      slot="center"
+      fake
+      @query="getQuery"
+      @click.native="goToSearch"
+    />
+    <i class="iconfont icon-msg" slot="right"></i>
+  </me-navbar>
 </template>
 
 <script>
-import MeNavbar from '@/components/navbar'
+import MeNavbar from '@/components/navbar/index'
 import MeSearchBox from '@/components/search-box/index'
 export default {
   name: 'HomeHeader',

@@ -13,6 +13,12 @@ module.exports = {
           '^/api': ''
         }
       },
+      '/taobao': {
+        target: 'https://ju.taobao.com/json/tg/ajaxGetItemsV2.json',
+        pathRewrite: {
+          '^/taobao': ''
+        }
+      }
     }
   },
   configureWebpack: {

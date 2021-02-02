@@ -15,8 +15,6 @@
   </swiper>
 </template>
 
-
-
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import MeLoading from '../loading/index'
@@ -32,6 +30,7 @@ import {
   PULL_UP_TEXT_ING,
   PULL_UP_TEXT_END
 } from './config'
+
 export default {
   name: 'MeScroll',
   components: {
@@ -56,6 +55,28 @@ export default {
       default: false
     }
   },
+  // data() {
+  //   return { // 下拉参数设置
+  //     pulling: false,
+  //     pullDownText: PULL_DOWN_TEXT_INIT,
+  //     pullUpText: PULL_DOWN_TEXT_INIT,//没有
+  //     swiperOption: {
+  //       direction: 'vertical',
+  //       slidesPerView: 'auto',
+  //       freeMode: true,
+  //       setWrapperSize: true,
+  //       scrollbar: {
+  //         el: this.scrollbar ? '.swiper-scrollbar' : null,
+  //         hide: true
+  //       },
+  //       on: {
+  //         sliderMove: this.scroll,
+  //         touchEnd: this.touchEnd,
+  //         // transitionEnd: this.scrollEnd
+  //       }
+  //     }
+  //   };
+  // },
   watch: {
     data() {
       this.update()
@@ -65,6 +86,15 @@ export default {
     this.init()
   },
   methods: {
+    update() {
+      this.$nextTick(() => {
+        this.$refs.swiper && this.$refs.swiper.swiper.update()
+      })
+    },
+    scrollToTop(speed, runCallbacks) {
+      this.$refs.swiper &&
+        this.$refs.swiper.swiper.slideTo(0, speed, runCallbacks)
+    },
     init() {
       this.pulling = false
       this.pullDownText = PULL_DOWN_TEXT_INIT
@@ -85,9 +115,11 @@ export default {
         }
       }
     },
+
     scroll() {
       const swiper = this.$refs.swiper.swiper
       // 监控什么时候出现回到顶部
+
       this.$emit('scroll', swiper.translate, this.$refs.swiper.swiper)
 
       if (this.pulling) {
@@ -184,29 +216,21 @@ export default {
       this.$refs.pullUpLoading.setText(PULL_UP_TEXT_END)
       swiper.params.virtualTranslate = false
       swiper.allowTouchMove = true
-    },
-    update() {
-      this.$nextTick(() => {
-        this.$refs.swiper && this.$refs.swiper.swiper.update()
-      })
-    },
-    scrollToTop(speed, runCallbacks) {
-      this.$refs.swiper &&
-        this.$refs.swiper.swiper.slideTo(0, speed, runCallbacks)
     }
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .swiper-container {
   overflow: hidden;
   width: 100%;
   height: 100%;
 }
+
 .swiper-slide {
   height: auto;
 }
+
 .mine-scroll-pull-up,
 .mine-scroll-pull-down {
   position: absolute;
@@ -217,6 +241,7 @@ export default {
   bottom: 100%;
   height: 80px;
 }
+
 .mine-scroll-pull-up {
   top: 100%;
   height: 30px;
