@@ -48,7 +48,6 @@ export default {
   data() {
     return {
       recommends: [],
-
       totalPage: 1,
       params: {
         page: 1,
