@@ -10,6 +10,9 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-    'semi': 0
+    "semi": [0],
+    "no-unused-vars": "warn",//把该条提示信息转换成警告信息
+    "singleQuote": 0,
+
   }
 };

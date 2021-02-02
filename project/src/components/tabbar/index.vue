@@ -20,7 +20,7 @@ export default {
       listData: [
         {
           name: '首页',
-          path: '/path',
+          path: '/home',
           icon: ' icon-home'
         },
         {

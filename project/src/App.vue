@@ -18,39 +18,4 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-@import './assets/style/mixin';
-.g-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  max-width: 640px;
-  min-width: 320px;
-  height: 100%;
-  margin: 0 auto;
-  .g-view-container {
-    height: 100%;
-    padding-bottom: $tabbar-height;
-  }
-  .g-header-container {
-    position: absolute;
-    left: 0;
-    z-index: $navbar-z-index;
-    width: 100%;
-  }
-  .g-footer-container {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: $tabbar-z-index;
-    width: 100%;
-    box-shadow: 0 0 10px 0 hsla(0, 6%, 58%, 0.6);
-  }
-  .g-backtop-container {
-    position: absolute;
-    z-index: $backtop-z-index;
-    right: 10px;
-    bottom: $tabbar-height + 10px;
-  }
-}
-</style>
+
