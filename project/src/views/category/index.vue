@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/style/mixin';
+@import '@/assets/style/mixin';
 .category {
   overflow: hidden;
   width: 100%;

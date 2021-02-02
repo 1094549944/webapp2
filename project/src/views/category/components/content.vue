@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import MeLoading from '../../../components/loading/index'
-import MeScroll from '../../../components/scrollCom/index'
+import MeLoading from '@/components/loading/index'
+import MeScroll from '@/components/scrollCom/index'
 
-import { getCategoryContent } from '../../../api/index'
+import { getCategoryContent } from '@/api/index'
 
 export default {
   name: 'CategoryContent',
@@ -110,6 +110,7 @@ export default {
   @include flex-center();
   width: 100%;
   height: 100%;
+  background: #ccc;
   /*background-color: $modal-bgc;*/
 
   .mine-loading {

@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/style/mixin';
+@import '@/assets/style/mixin';
 .g-tabbar {
   display: flex;
   width: 100%;

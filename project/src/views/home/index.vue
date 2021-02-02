@@ -1,11 +1,17 @@
 <template>
-  <div>首页</div>
+  <div>
+    <home-header />
+  </div>
 </template>
 
 <script>
+import HomeHeader from './components/header'
 import { getSlider } from '../../api/index'
 export default {
   name: 'home',
+  components: {
+    HomeHeader
+  },
   created() {
     this.test()
   },

@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import CTabbar from './components/tabbar/index'
+import CTabbar from '@/components/tabbar/index'
 export default {
   components: {
     CTabbar

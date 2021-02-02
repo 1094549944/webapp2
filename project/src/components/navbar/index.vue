@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/style/mixin';
+@import '@/assets/style/mixin';
 .mine-navbar {
   position: relative;
   @include flex-between();

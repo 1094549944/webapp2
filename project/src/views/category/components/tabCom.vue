@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import MeScroll from '../../../components/scrollCom'
+import MeScroll from '@/components/scrollCom'
 import { categoryNames } from './config'
 export default {
   name: 'CategoryTab',
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/style/mixin';
+@import '@/assets/style/mixin';
 
 $tab-item-height: 46px;
 

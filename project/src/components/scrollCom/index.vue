@@ -88,7 +88,6 @@ export default {
     scroll() {
       const swiper = this.$refs.swiper.swiper
       // 监控什么时候出现回到顶部
-      console.log('我在滑动管')
       this.$emit('scroll', swiper.translate, this.$refs.swiper.swiper)
 
       if (this.pulling) {
